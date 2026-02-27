@@ -1,4 +1,4 @@
-💊 PharmaGuard AI
+#💊 PharmaGuard AI
 NLP-Driven Drug Advisory & Predictive Risk Assessment System
 📌 Project Overview
 PharmaGuard AI is an advanced clinical decision support tool designed to mitigate medication risks. It utilizes Natural Language Processing (NLP) to parse complex side-effect narratives and Machine Learning (ML) to predict drug efficacy ratings based on patient-reported outcomes and clinical metadata.
