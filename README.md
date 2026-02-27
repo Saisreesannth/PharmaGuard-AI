@@ -4,7 +4,7 @@
 **PharmaGuard AI** is a sophisticated clinical decision support system designed to enhance patient safety by analyzing pharmaceutical data. It utilizes **Natural Language Processing (NLP)** to parse unstructured medical text and **Machine Learning (ML)** to predict drug efficacy, bridging the gap between dense documentation and actionable healthcare insights.
 
 ## 🛠️ Tech Stack
-* [cite_start]**Languages:** Python [cite: 30, 44][cite_start], C++ [cite: 44]
+* [cite_start]**Languages:** Python [cite: 30, 44]
 * [cite_start]**Backend Framework:** Flask [cite: 30, 45]
 * [cite_start]**Machine Learning:** Scikit-Learn (Random Forest Regressor) [cite: 24, 45]
 * **NLP Library:** NLTK (VADER Sentiment Analysis)
