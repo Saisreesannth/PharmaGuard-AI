@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PharmaGuard AI | Diagnostic Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💊 PharmaGuard AI</h1>
+            <span class="accuracy-tag">ML Precision: {{ accuracy }}</span>
+        </div>
+        
+        <form method="POST">
+            <div class="input-section">
+                <label>Medical Condition</label>
+                <select name="condition" onchange="this.form.submit()">
+                    <option value="">-- Select Patient Condition --</option>
+                    {% for c in conditions %}
+                    <option value="{{c}}" {% if sel_cond == c %}selected{% endif %}>{{c}}</option>
+                    {% endfor %}
+                </select>
+
+                <label>Target Medication</label>
+                <select name="drug">
+                    <option value="">-- Select Drug --</option>
+                    {% for d in drugs %}
+                    <option value="{{d}}">{{d}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit">Execute AI Diagnostic</button>
+        </form>
+
+        {% if result %}
+        <div class="dashboard">
+            <div class="card">
+                <div class="val">{{ result.actual_rating }}</div>
+                <div class="lab">Actual Rating</div>
+            </div>
+            <div class="card highlight">
+                <div class="val" style="color: #2563eb;">{{ result.predicted_rating }}</div>
+                <div class="lab">ML Predicted Rating</div>
+            </div>
+            <div class="card">
+                <div class="val">{{ result.pregnancy }}</div>
+                <div class="lab">Pregnancy Safety</div>
+            </div>
+            <div class="card">
+                <div class="val {{ 'risk-high' if 'HIGH' in result.risk_level else 'risk-normal' }}">
+                    {{ result.risk_level }}
+                </div>
+                <div class="lab">Risk Assessment</div>
+            </div>
+        </div>
+
+        <div class="summary-box">
+            <h3>🔍 Clinical Intelligence Summary</h3>
+            <p class="summary-text">"{{ result.summary }}"</p>
+            <div class="sentiment-bar">
+                <strong>NLP Sentiment Score:</strong> {{ result.sentiment_score }} 
+                <small>(Range: -1.0 Very Negative to 1.0 Positive)</small>
+            </div>
+        </div>
+
+        {% if result.warnings %}
+        <div class="warning-box">
+            <strong>⚠️ CRITICAL NLP FLAGS:</strong>
+            <ul>
+                {% for w in result.warnings %}
+                <li>{{ w }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <div class="disclaimer">
+            * AI-generated insights for educational research. Consult a physician for medical advice.
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
