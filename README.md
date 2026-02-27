@@ -9,7 +9,7 @@
 * [cite_start]**Machine Learning:** Scikit-Learn (Random Forest Regressor) [cite: 24, 45]
 * **NLP Library:** NLTK (VADER Sentiment Analysis)
 * [cite_start]**Data Science Tools:** Pandas [cite: 15, 18, 46][cite_start], NumPy [cite: 15, 18, 46][cite_start], Scikit-Learn [cite: 15, 24, 45]
-* [cite_start]**Frontend:** HTML5 [cite: 30, 44][cite_start], CSS3 [cite: 30, 44][cite_start], Javascript [cite: 44]
+* [cite_start]**Frontend:** HTML5 [cite: 30, 44][cite_start], CSS3 [cite: 30, 44][cite_start], 
 * [cite_start]**Environment:** Jupyter Notebook[cite: 47], VS Code
 
 ## ✨ Key Features
